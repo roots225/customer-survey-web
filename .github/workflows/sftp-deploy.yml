@@ -1,0 +1,42 @@
+name: SFTP Deploy
+
+on:
+  push:
+    branches:
+      - main # Déploie lorsque du code est poussé sur la branche 'main'
+
+jobs:
+  sftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js environment # Si vous utilisez Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20" # Vous pouvez spécifier la version que vous utilisez
+
+      - name: Install dependencies
+        run: npm install # Ou yarn install si vous utilisez Yarn
+
+      - name: Build-only step
+        run: npm run build-only # Remplacez par la commande de build de votre projet
+        # Vous pouvez aussi ajouter d'autres scripts de build spécifiques si nécessaire
+
+      - name: Deploy via SFTP using SSH Key
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SFTP_SERVER }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          key: ${{ secrets.SFTP_SSH_KEY }}
+          port: ${{ secrets.SFTP_PORT }}
+          source: "./" # Spécifiez le dossier de build (par exemple './dist/' pour un projet Node)
+          target: "/var/www/customer-survey-web" # Dossier cible sur le serveur
+          rm: true # Supprime les fichiers obsolètes sur le serveur
+          recursive: true
+          exclude: |
+            .git/*
+            .github/*
+            node_modules/*

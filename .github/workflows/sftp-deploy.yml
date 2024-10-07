@@ -13,18 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js environment # Si vous utilisez Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "20" # Vous pouvez spécifier la version que vous utilisez
-
-      - name: Install dependencies
-        run: npm install # Ou yarn install si vous utilisez Yarn
-
-      - name: Build-only step
-        run: npm run build-only # Remplacez par la commande de build de votre projet
-        # Vous pouvez aussi ajouter d'autres scripts de build spécifiques si nécessaire
-
       - name: Deploy via SFTP using SSH Key
         uses: appleboy/scp-action@v0.1.7
         with:

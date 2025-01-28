@@ -1,131 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Yakou Survey Application</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script
-      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Google fonts-->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.svg?" />
+    <link rel="stylesheet" href="style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap"
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <script defer src="app.js"></script>
+    <title>Quizz Pro -</title>
   </head>
   <body>
-    <!-- Background Video-->
-    <video
-      class="bg-video"
-      playsinline="playsinline"
-      autoplay="autoplay"
-      muted="muted"
-      loop="loop"
-    >
-      <source src="assets/mp4/bg.mp4" type="video/mp4" />
-    </video>
-    <!-- Masthead-->
-    <div class="masthead">
-      <div class="masthead-content text-white">
-        <div class="container-fluid px-4 px-lg-0">
-          <h1 class="fst-italic lh-1 mb-4">
-            Notre SiteWeb sera Bientôt Disponible
-          </h1>
-          <p class="mb-5">
-            Nous travaillons pour terminer le développement de ce site.
-            Inscrivez-vous ci-dessous pour recevoir les mise à jour et être
-            informé de notre lancement!
-          </p>
+    <div class="preloader">
+      <span class="preloader__circle"></span>
+      <span class="preloader__circle preloader__circle--two"></span>
+    </div>
 
-          <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-            <!-- Email address input-->
-            <div class="row input-group-newsletter">
-              <div class="col">
-                <input
-                  class="form-control"
-                  id="email"
-                  type="email"
-                  placeholder="Entrer votre email..."
-                  aria-label="Entrer votre email..."
-                  data-sb-validations="required,email"
-                />
-              </div>
-              <div class="col-auto">
-                <button
-                  class="btn btn-primary disabled"
-                  id="submitButton"
-                  type="submit"
-                >
-                  Me Notifier!
-                </button>
-              </div>
-            </div>
-            <div
-              class="invalid-feedback mt-2"
-              data-sb-feedback="email:required"
+    <a href="#" class="go-top" aria-label="Go back to top"
+      ><i class="fa-solid fa-chevron-up"></i
+    ></a>
+
+    <nav>
+      <a href="#" class="nav__logo">
+        <img
+          src="./images/bs-consulting.png"
+          alt="Logo | QuizzPro"
+          title="Logo | QuizzPro"
+          class="nav__logo-white"
+        />
+        <img
+          src="./images/bs-consulting.png"
+          alt="Logo | QuizzPro orange"
+          title="Logo | QuizzPro orange"
+          class="nav__logo-orange"
+        />
+        <span class="name">QuizzPro</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#header" class="header-link">Accueil</a></li>
+        <li><a href="#features" class="features-link">Fonctionnalités</a></li>
+        <li><a href="#overview" class="overview-link">Aperçu</a></li>
+        <!-- <li><a href="#team" class="team-link">Team</a></li> -->
+        <!-- <li><a href="contact.html">Contact</a></li> -->
+      </ul>
+      <div class="nav__menu">
+        <div class="hamburger"></div>
+      </div>
+      <a href="#" class="nav__cta">Télécharger</a>
+    </nav>
+
+    <header id="header" class="nav-section">
+      <section class="header__text">
+        <h1 class="fadeFromLeft">
+          Une Application simple et efficace pour le suivi de votre activité.
+        </h1>
+        <p class="fadeFromLeft">
+          Fiabilité des informations remontées par les responsables réseaux
+          (RS).
+        </p>
+        <div class="header__text-link fadeFromLeft">
+          <a href="#"
+            ><i class="fa-brands fa-apple"></i><span>App Store</span></a
+          >
+          <a href="#"
+            ><i class="fa-brands fa-google-play"></i><span>Google Play</span></a
+          >
+        </div>
+      </section>
+      <div class="header__img">
+        <img
+          src="./images/phone.png"
+          alt="Appvilla mobile app's UI"
+          class="fadeFromRight"
+        />
+      </div>
+    </header>
+
+    <div class="features nav-section" id="features">
+      <section class="features__text">
+        <h3 class="fadeFromTop">Fonctionnalités</h3>
+        <h2 class="fadeFromTop">
+          Fiabilité et garanti des informations remontées par les RS.
+        </h2>
+        <p class="fadeFromTop">
+          Toutes les boutiques sont enregistrées avec leurs coordonnées GPS, de
+          sorte que si le RS n’est pas dans l’enceinte de la boutique, il ne
+          peut pas valider le questionnaire.
+        </p>
+      </section>
+      <div class="features__grid">
+        <section class="feature fadeFromTop">
+          <div class="feature__icon">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+          </div>
+          <h3>Enregistrement</h3>
+          <p>Enregistrement du questionnaire uniquement dans la boutique.</p>
+        </section>
+        <section class="feature fadeFromTop">
+          <div class="feature__icon">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <h3>Application sécurisée</h3>
+          <p>
+            Cette application offre une sécurité SSL complète pour la sureté des
+            données.
+          </p>
+        </section>
+        <section class="feature fadeFromTop">
+          <div class="feature__icon">
+            <i class="fa-solid fa-rotate"></i>
+          </div>
+          <h3>Gestion des informations</h3>
+          <p>Possibilité de voir les statisques d'une enquête.</p>
+        </section>
+        <section class="feature fadeFromTop">
+          <div class="feature__icon">
+            <i class="fa-solid fa-shield"></i>
+          </div>
+          <h3>Plateforme Web</h3>
+          <p>Gestion des de vos points de ventes, statistiques globales</p>
+        </section>
+        <section class="feature fadeFromTop">
+          <div class="feature__icon">
+            <i class="fa-solid fa-gear"></i>
+          </div>
+          <h3>Exportation des données</h3>
+          <p>
+            Possibilité d'exporter des informations dans des fichiers excel.
+          </p>
+        </section>
+        <section class="feature fadeFromTop">
+          <div class="feature__icon">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <h3>Sauvegarde et restauration</h3>
+          <p>Garantie de la sauvegarde de vos données</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="overview nav-section" id="overview">
+      <div class="overview-flex fadeFromTop">
+        <section class="overview-flex__text">
+          <div class="overview-flex__text-icon">
+            <i class="fa-solid fa-download"></i>
+          </div>
+          <h2>Près de 3 000 Points de ventes enregistrées sur la plateforme</h2>
+          <p>
+            Sur la plateforme web, on pourra avoir des statistiques sur les
+            remontées effectuées, une classification des boutiques qui
+            respectent le cahier de charge des exigences de CANAL+.
+          </p>
+          <a href="#" class="overview-flex__text-link">Télécharger</a>
+        </section>
+        <div class="overview-flex__img">
+          <img src="./images/app-ss1.png" alt="" />
+        </div>
+      </div>
+      <div class="overview-flex overview-flex-two fadeFromTop">
+        <section class="overview-flex__text">
+          <div class="overview-flex__text-icon">
+            <i class="fa-solid fa-table-list"></i>
+          </div>
+          <h2>Visualisation des détails d'une visite</h2>
+          <p>
+            Toutes les boutiques sont enregistrées avec leurs coordonnées GPS,
+            de sorte que si le RS n’est pas dans l’enceinte de la boutique, il
+            ne peut pas valider le questionnaire.
+          </p>
+          <a href="#" class="overview-flex__text-link">Télécharger</a>
+        </section>
+        <div class="overview-flex__img">
+          <img src="./images/app-ss2.png" alt="" />
+        </div>
+      </div>
+      <section class="overview__facts">
+        <h2 class="fadeFromTop">3 Distributeurs nous font confiance</h2>
+        <p class="fadeFromTop">
+          Plusieurs autres sont en passe de nous rejoindre.
+        </p>
+        <div class="fact-flex fadeFromTop">
+          <section class="fact-flex__column">
+            <h3>100%</h3>
+            <p>Satisfaction</p>
+          </section>
+          <section class="fact-flex__column">
+            <h3>30+</h3>
+            <p>Utilisateurs Heureux</p>
+          </section>
+          <section class="fact-flex__column">
+            <h3>30+</h3>
+            <p>Téléchargements</p>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    <div class="testimonial">
+      <img
+        src="./images/testi-patern.svg"
+        alt=""
+        class="testimonial__pattern testimonial__pattern--top"
+      />
+      <img
+        src="./images/testi-patern.svg"
+        alt=""
+        class="testimonial__pattern testimonial__pattern--bottom"
+      />
+      <div class="swiper1">
+        <div class="swiper-wrapper">
+          <div class="slide swiper-slide">
+            <img src="./images/brand1.svg" alt="" />
+            <q
+              >It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has</q
             >
-              L'Email est obligatoire.
+            <div class="slide__profile">
+              <img src="./images/testi1.jpg" alt="" />
+              <h4>Musharof Chowdhury</h4>
+              <span>CEO - Graygrids</span>
             </div>
-            <div class="invalid-feedback mt-2" data-sb-feedback="email:email">
-              l'Email n'est pas valide.
+          </div>
+          <div class="slide swiper-slide">
+            <img src="./images/brand2.svg" alt="" />
+            <q
+              >It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has</q
+            >
+            <div class="slide__profile">
+              <img src="./images/comment1.jpg" alt="" />
+              <h4>Musharof Chowdhury</h4>
+              <span>CEO - Ayro UI</span>
             </div>
-            <!-- Submit success message-->
-            <!---->
-            <!-- This is what your users will see when the form-->
-            <!-- has successfully submitted-->
-            <div class="d-none" id="submitSuccessMessage">
-              <div class="text-center mb-3 mt-2">
-                <div class="fw-bolder">
-                  Nous avons bien enregistré votre e-mail!
-                </div>
-              </div>
+          </div>
+          <div class="slide swiper-slide">
+            <img src="./images/brand3.svg" alt="" />
+            <q
+              >It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has</q
+            >
+            <div class="slide__profile">
+              <img src="./images/testi3.jpg" alt="" />
+              <h4>Naimur Rahman</h4>
+              <span>CEO - WpthemesGrid</span>
             </div>
-            <!-- Submit error message-->
-            <!---->
-            <!-- This is what your users will see when there is-->
-            <!-- an error submitting the form-->
-            <div class="d-none" id="submitErrorMessage">
-              <div class="text-center text-danger mb-3 mt-2">
-                Une erreur s'est produite !
-              </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <section class="install">
+      <h2 class="fadeFromTop">Installer Quizzpro et l'utiliser</h2>
+      <p class="fadeFromTop">
+        La solution est une application mobile couplée à une plateforme web, les
+        RS vont installer l’application mobile et vont remplir les
+        questionnaires et notifier les constatations sur le site, après
+        validation avec prise de photo du site et signature du conseiller
+        clientèle de la boutique, les informations seront récupérées
+        automatiquement sur la plateforme web en back office.
+      </p>
+      <div class="install__link fadeFromTop">
+        <a href="#"><i class="fa-brands fa-apple"></i><span>App Store</span></a>
+        <a href="#"
+          ><i class="fa-brands fa-google-play"></i><span>Google Play</span></a
+        >
+      </div>
+    </section>
+
+    <div class="faq">
+      <section class="faq__text">
+        <h3 class="fadeFromTop">FAQ</h3>
+        <h2 class="fadeFromTop">Foire Aux Questions</h2>
+        <p class="fadeFromTop">
+          Les questions qui nous reviennent le plus souvent.
+        </p>
+      </section>
+      <div class="faq__accordion">
+        <details>
+          <summary>
+            <div class="question">
+              <div class="question__count">01</div>
+              <p>How do I contact customer services?</p>
             </div>
-          </form>
+            <i class="fa-solid fa-plus"></i>
+            <i class="fa-solid fa-minus"></i>
+          </summary>
+          <p class="answer">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+            consectetur sit amet ante nec vulputate.Anim pariatur cliche
+            reprehenderit, enim eiusmod high life accusamus terry richardson ad
+            squid. 3 wolf moon officia aute.<br /><br />
+            non cupidatat skateboard dolor brunch. Foosd truck quinoa nesciunt
+            laborum eiusmod. Brunch 3 wolf moon tempor, sunt alqua put a bird on
+            it squid single-origin coffee nulla assumenda shoreditch et. Nihil
+            anim ke ffiyeh helvetica, craft beer labore wes anderson cred
+            nesciunt sapiente ea proident.
+          </p>
+        </details>
+        <details>
+          <summary>
+            <div class="question">
+              <div class="question__count">02</div>
+              <p>Material types can you work with?</p>
+            </div>
+            <i class="fa-solid fa-plus"></i>
+            <i class="fa-solid fa-minus"></i>
+          </summary>
+          <p class="answer">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute. non cupidatat
+            skateboard dolor brunch. Foosd truck quinoa nesciunt laborum
+            eiusmod. Brunch 3 wolf moon tempor, sunt alqua put a bird on it
+            squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            ke ffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident.<br /><br />Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Aliquam consectetur sit amet ante nec
+            vulputate. Nulla aliquam, justo auctor consequat tincidunt, arcu
+            erat mattis lorem, lacinia lacinia dui enim at eros. Pellentesque ut
+            gravida augue. Duis ac dictum tellus
+          </p>
+        </details>
+        <details>
+          <summary>
+            <div class="question">
+              <div class="question__count">03</div>
+              <p>Can I have multiple activities in a single feature?</p>
+            </div>
+            <i class="fa-solid fa-plus"></i>
+            <i class="fa-solid fa-minus"></i>
+          </summary>
+          <p class="answer">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas
+            expedita, repellendus est nemo cum quibusdam optio, voluptate hic a
+            tempora facere, nihil non itaque alias similique quas quam odit
+            consequatur.
+          </p>
+        </details>
+        <details>
+          <summary>
+            <div class="question">
+              <div class="question__count">04</div>
+              <p>How clients can consult through online?</p>
+            </div>
+            <i class="fa-solid fa-plus"></i>
+            <i class="fa-solid fa-minus"></i>
+          </summary>
+          <p class="answer">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute. non cupidatat
+            skateboard dolor brunch. Foosd truck quinoa nesciunt laborum
+            eiusmod. Brunch 3 wolf moon tempor, sunt alqua put a bird on it
+            squid single-origin coffee nulla assumenda shoreditch et.<br /><br />Lorem
+            ipsum dolor sit amet, consectetur adipisicing elit. Provident iure
+            ab nisi, magnam vitae. Laboriosam laborum suscipit recusandae
+            officia laudantium, consectetur adipisci voluptates doloremque
+            quisquam. Id rerum iusto reprehenderit assumenda!
+          </p>
+        </details>
+        <details>
+          <summary>
+            <div class="question">
+              <div class="question__count">05</div>
+              <p>Can I share resources between features?</p>
+            </div>
+            <i class="fa-solid fa-plus"></i>
+            <i class="fa-solid fa-minus"></i>
+          </summary>
+          <p class="answer">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute. non cupidatat
+            skateboard dolor brunch. Foosd truck quinoa nesciunt laborum
+            eiusmod. Brunch 3 wolf moon tempor, sunt alqua put a bird on it
+            squid single-origin coffee nulla assumenda shoreditch et.
+          </p>
+        </details>
+      </div>
+    </div>
+
+    <div class="clients">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./images/graygrids-logo.svg" alt="Graygrids" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/lineicons-logo.svg" alt="Lineicons" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/pagebulb-logo.svg" alt="Pagebulb" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/graygrids-logo.svg" alt="Graygrids" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/lineicons-logo.svg" alt="Lineicons" />
+          </div>
         </div>
       </div>
     </div>
-    <!-- Social Icons-->
-    <!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
-    <div class="social-icons">
-      <div
-        class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0"
-      >
-        <a class="btn btn-dark m-3" href="#!"><i class="fab fa-twitter"></i></a>
-        <a class="btn btn-dark m-3" href="#!"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a class="btn btn-dark m-3" href="#!"
-          ><i class="fab fa-instagram"></i
-        ></a>
+
+    <footer>
+      <div class="footer__top">
+        <div class="footer__intro">
+          <a
+            href="#"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              margin-bottom: 1.5rem;
+            "
+            ><img
+              style="width: auto; height: 50px; margin-bottom: 0"
+              src="./images/bs-consulting.png"
+              alt="Home | QuizzPro"
+              class="footer__intro--logo"
+            />
+            <span style="color: #fff; font-size: 1.2rem">QuizzPro</span>
+          </a>
+          <p>
+            La solution est une application mobile couplée à une plateforme web
+          </p>
+          <ul class="footer__intro--media-links">
+            <li>
+              <a href="#" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" aria-label="Twitter"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+            </li>
+            <!-- <li>
+              <a href="#" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </li> -->
+            <li>
+              <a href="#" aria-label="Linkedin"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+            </li>
+            <!-- <li>
+              <a href="#" aria-label="Youtube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" aria-label="Pinterest"
+                ><i class="fa-brands fa-pinterest"></i
+              ></a>
+            </li> -->
+          </ul>
+          <p class="footer__intro--copyright">
+            Intégré par <a href="#">Yakou Services</a>.
+          </p>
+        </div>
+        <div class="footer__grids">
+          <section class="footer__grid">
+            <h3>Solutions</h3>
+            <ul class="footer__grid--list">
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Analytics</a></li>
+              <li><a href="#">E-Commerce</a></li>
+              <li><a href="#">Insights</a></li>
+              <li><a href="#">Promotion</a></li>
+            </ul>
+          </section>
+          <section class="footer__grid">
+            <h3>Support</h3>
+            <ul class="footer__grid--list">
+              <li><a href="#">Tarif</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Guides</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </section>
+          <section class="footer__grid">
+            <h3>Entreoprise</h3>
+            <ul class="footer__grid--list">
+              <li><a href="#">A propos</a></li>
+              <li><a href="#">Contacts</a></li>
+            </ul>
+          </section>
+          <section class="footer__grid">
+            <h3>Conditions</h3>
+            <ul class="footer__grid--list">
+              <li><a href="#">Termes & Conditions</a></li>
+              <li><a href="#">Politique de confidentialité</a></li>
+              <!-- <li><a href="#">Customer Relations</a></li> -->
+            </ul>
+          </section>
+        </div>
       </div>
-    </div>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+      <!-- <div class="newsletter">
+        <div class="newsletter__text">
+          <h3>Subscribe To Our Newsletter</h3>
+          <p>
+            The latest news, articles, and resources, sent to your inbox weekly.
+          </p>
+        </div>
+        <form action="#" class="newsletter__form">
+          <input type="email" placeholder="Your email address" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div> -->
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   </body>
 </html>
